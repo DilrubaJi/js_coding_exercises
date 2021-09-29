@@ -6,23 +6,24 @@ function capitalize(word) {
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  // Add your code here!
+  return firstName.substring(0, 1) + '.' + lastName.substring(0, 1);
 }
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  // Add your code here!
+  return originalPrice / 100 * vatRate + originalPrice;
 }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
+  return originalPrice - (originalPrice / 100 * reduction);
 }
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
+  
   // Add your code here!
 }
 
