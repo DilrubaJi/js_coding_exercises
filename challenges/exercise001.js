@@ -42,12 +42,17 @@ return r;
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Add your code here!
+  for (var i = 0; i < words.length; i = i + 1){
+  words[i] = reverseWord(words[i]) 
+}  
+  return words;
 }
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  // Add your code here!
+  var type = 'Linux';
+  var count = users.filter((obj) => obj.type === type).length;
+  return count;
 }
 
 function getMeanScore(scores) {
