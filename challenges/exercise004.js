@@ -45,23 +45,42 @@ function getIntegers(nums) {
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
-  // Your code here
+  let arrRes = [];
+  for (let i = 0; i < users.length; i++){
+    arrRes.push(users[i].data.city.displayName);
+  }
+  return arrRes;
 }
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+  let arrRes = [];
+  for (let i = 0; i < nums.length; i++){
+    arrRes.push(+Math.sqrt(nums[i]).toFixed(2));
+  }
+  return arrRes;
+  
 }
 
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  // Your code here
+  let arrRes = [];
+  for (let i = 0; i < sentences.length; i++){
+    if(sentences[i].toLowerCase().includes(str)){
+      arrRes.push(sentences[i]);
+    }
+  }
+  return arrRes;
 }
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  // Your code here
+  let arrRes = [];
+  for (let i = 0; i < triangles.length; i++){
+    arrRes.push(Math.max(...triangles[i]));
+  }
+  return arrRes;
 }
 
 module.exports = {
