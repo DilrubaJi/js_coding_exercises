@@ -12,14 +12,14 @@ function generateInitials(firstName, lastName) {
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  var rAns = originalPrice / 100 * vatRate + originalPrice;
+  let rAns = originalPrice / 100 * vatRate + originalPrice;
   return +rAns.toFixed(2);
 }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  var rAns = originalPrice - (originalPrice / 100 * reduction);
+  let rAns = originalPrice - (originalPrice / 100 * reduction);
   return +rAns.toFixed(2);
 }
 
@@ -33,16 +33,16 @@ function getMiddleCharacter(str) {
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  var r = "";
-  for (var i = word.length; i >= 0; i = i - 1) {
-    r = r + word.charAt(i);
-}
-return r;   
+  let r = "";
+  for (let i = word.length; i >= 0; i--) {
+    r += word.charAt(i);
+  }
+  return r;   
 }
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  for (var i = 0; i < words.length; i = i + 1){
+  for (let i = 0; i < words.length; i++){
   words[i] = reverseWord(words[i]) 
 }  
   return words;
@@ -50,18 +50,18 @@ function reverseAllWords(words) {
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  var type = 'Linux';
-  var count = users.filter((obj) => obj.type === type).length;
+  let type = 'Linux';
+  let count = users.filter((obj) => obj.type === type).length;
   return count;
 }
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  var sum = 0;
-  for (var i = 0; i < scores.length; i = i + 1){
+  let sum = 0;
+  for (let i = 0; i < scores.length; i++){
     sum = sum + scores[i];
     }
-    var totSum = sum / scores.length;
+    let totSum = sum / scores.length;
   return +totSum.toFixed(2);
 }
 
@@ -75,7 +75,7 @@ function simpleFizzBuzz(n) {
     return ('buzz');
 } else 
     return (4);    
-
+//needs refactoring 
 }
 
 module.exports = {
