@@ -1,3 +1,5 @@
+const capitalize = require("./exercise001");
+
 function getSquares(nums) {
   let arrReturn = [];
   if (nums === undefined) throw new Error("nums is required");
@@ -12,13 +14,9 @@ function camelCaseWords(words) {
 
   let arrReturn = words;
   for (let i = 1; i < words.length; i++) {
-    arrReturn[i] = capitalize(words[i]);
+    arrReturn[i] = capitalize.capitalize(words[i]);
   }
   return arrReturn.join("")
-
-}
-function capitalize(word) {
-  return word.substring(0, 1).toUpperCase() + word.substring(1, word.length);
 }
 
 function getTotalSubjects(people) {
