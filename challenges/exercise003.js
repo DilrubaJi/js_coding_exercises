@@ -10,15 +10,15 @@ function getSquares(nums) {
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
 
-  function capitalize(word) {
-    return word.substring(0, 1).toUpperCase() + word.substring(1, word.length);
-  }
   let arrReturn = words;
   for (let i = 1; i < words.length; i++) {
     arrReturn[i] = capitalize(words[i]);
   }
   return arrReturn.join("")
 
+}
+function capitalize(word) {
+  return word.substring(0, 1).toUpperCase() + word.substring(1, word.length);
 }
 
 function getTotalSubjects(people) {
