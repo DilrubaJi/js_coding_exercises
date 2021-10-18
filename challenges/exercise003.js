@@ -1,18 +1,16 @@
 const capitalize = require("./exercise001");
 
 function getSquares(nums) {
-  let arrReturn = [];
   if (nums === undefined) throw new Error("nums is required");
-  for (let i = 0; i < nums.length; i++) {
-    arrReturn[i] = Math.pow(nums[i], 2);
-  }
-  return arrReturn;
+  const arrResult = [];
+  nums.forEach(i => arrResult.push(Math.pow(i, 2)));
+  return arrResult;
 }
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
 
-  let arrReturn = words;
+  const arrReturn = words;
   for (let i = 1; i < words.length; i++) {
     arrReturn[i] = capitalize.capitalize(words[i]);
   }
@@ -22,16 +20,14 @@ function camelCaseWords(words) {
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
   let countNum = 0;
-  for (let i = 0; i < people.length; i++) {
-    countNum = countNum + people[i].subjects.length
-  }
+  people.forEach(i => countNum += i.subjects.length);
   return countNum;
 }
 
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  let result = menu.filter(o => o.ingredients.includes(ingredient)).length;
+  const result = menu.filter(o => o.ingredients.includes(ingredient)).length;
   return !!result;
 }
 
