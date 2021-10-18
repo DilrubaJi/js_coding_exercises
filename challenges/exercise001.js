@@ -13,14 +13,13 @@ function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
   return +(originalPrice / 100 * vatRate + originalPrice).toFixed(2);
-  
+
 }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  let result = originalPrice - (originalPrice / 100 * reduction);
-  return +result.toFixed(2);
+  return +(originalPrice - (originalPrice / 100 * reduction)).toFixed(2);
 }
 
 function getMiddleCharacter(str) {
@@ -33,11 +32,7 @@ function getMiddleCharacter(str) {
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  let reversed = "";
-  for (let i = word.length; i >= 0; i--) {
-    reversed += word.charAt(i);
-  }
-  return reversed;
+  return word.split("").reverse("").join("");
 }
 
 function reverseAllWords(words) {
@@ -50,9 +45,7 @@ function reverseAllWords(words) {
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  let type = 'Linux';
-  let count = users.filter((obj) => obj.type === type).length;
-  return count;
+  return users.filter(obj => obj.type === "Linux").length;
 }
 
 function getMeanScore(scores) {
