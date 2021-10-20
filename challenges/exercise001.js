@@ -1,6 +1,6 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  return word.substring(0, 1).toUpperCase() + word.substring(1, word.length);
+  return word.charAt(0).toUpperCase() + word.substring(1, word.length);
 }
 
 function generateInitials(firstName, lastName) {
@@ -13,7 +13,6 @@ function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
   return +(originalPrice / 100 * vatRate + originalPrice).toFixed(2);
-
 }
 
 function getSalePrice(originalPrice, reduction) {
@@ -24,22 +23,19 @@ function getSalePrice(originalPrice, reduction) {
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  if (str.length % 2 === 1) {
-    return str.substring(str.length / 2 - 0.5, str.length / 2 + 0.5);
-  }
-  else return str.substring(str.length / 2 - 1, str.length / 2 + 1);
+  return str.length % 2 === 1?
+    str.substring(str.length / 2 - 0.5, str.length / 2 + 0.5) :
+    str.substring(str.length / 2 - 1, str.length / 2 + 1);
 }
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
   return word.split("").reverse("").join("");
 }
-
+//do we want to preserve the orignal array? Or is the function supposed to alter the array like below?
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  for (let i = 0; i < words.length; i++) {
-    words[i] = reverseWord(words[i])
-  }
+  words.forEach((value, index) => words.splice(index, 1, reverseWord(value)));
   return words;
 }
 
@@ -50,12 +46,7 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  let sum = 0;
-  for (let i = 0; i < scores.length; i++) {
-    sum = sum + scores[i];
-  }
-  let totSum = sum / scores.length;
-  return +totSum.toFixed(2);
+  return +(scores.reduce((total, current) => total + current) / scores.length).toFixed(2);
 }
 
 function simpleFizzBuzz(n) {
