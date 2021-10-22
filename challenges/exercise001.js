@@ -53,18 +53,14 @@ function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
   switch (true) {
     case (n % 5 === 0 && n % 3 === 0):
-        return "fizzbuzz";
-        break;
+      return "fizzbuzz";
     case n % 3 === 0:
-        return "fizz";
-        break;
+      return "fizz";
     case n % 5 === 0:
-        return "buzz";
-        break;
+      return "buzz";
     default:
-        return n;
-        break;
-        };
+      return n;
+  }
 }
 
 module.exports = {
