@@ -23,7 +23,7 @@ function getSalePrice(originalPrice, reduction) {
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  return str.length % 2 === 1?
+  return str.length % 2 === 1 ?
     str.substring(str.length / 2 - 0.5, str.length / 2 + 0.5) :
     str.substring(str.length / 2 - 1, str.length / 2 + 1);
 }
@@ -51,15 +51,20 @@ function getMeanScore(scores) {
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  if (n % 3 === 0 && n % 5 === 0) {
-    return ('fizzbuzz');
-  } else if (n % 3 === 0) {
-    return ('fizz');
-  } else if (n % 5 === 0) {
-    return ('buzz');
-  } else
-    return (4);
-  //needs refactoring 
+  switch (true) {
+    case (n % 5 === 0 && n % 3 === 0):
+        return "fizzbuzz";
+        break;
+    case n % 3 === 0:
+        return "fizz";
+        break;
+    case n % 5 === 0:
+        return "buzz";
+        break;
+    default:
+        return n;
+        break;
+        };
 }
 
 module.exports = {
