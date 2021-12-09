@@ -43,8 +43,8 @@ describe("sumMultiples", () => {
 describe("isValidDNA", () => {
     it("throws an error if not a string is passed", () => {
         expect(() => {
-            isValidDNA([])
-        }).toBe("string was expected");
+            isValidDNA()
+        }).toThrow("str is required");
     });
 });
 
