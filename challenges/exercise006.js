@@ -17,6 +17,7 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  return (/^[CTGA]*$/gi.test(str) ? true : false);
 };
 
 /**

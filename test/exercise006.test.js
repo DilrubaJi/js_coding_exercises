@@ -51,6 +51,22 @@ describe("isValidDNA", () => {
         expect(isValidDNA("CGTA")).toBe(true);
     });
 
+    it("passes only CA correct characters", () => {
+        expect(isValidDNA("CA")).toBe(true);
+    });
+
+    it("passes CGTANOPE correct characters and other false characters", () => {
+        expect(isValidDNA("CGTNOPE")).toBe(false);
+    });
+
+    it("passes ctG lowercase correct characters", () => {
+        expect(isValidDNA("ctG")).toBe(true);
+    });
+
+    it("passes ljicktKsAf, lowercase and uppercase with mixed characters", () => {
+        expect(isValidDNA("ljicktKsAf")).toBe(false);
+    });
+
 });
 
 // describe("createMatrix", () => {
