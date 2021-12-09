@@ -46,6 +46,11 @@ describe("isValidDNA", () => {
             isValidDNA()
         }).toThrow("str is required");
     });
+
+    it("returns true when the characters CGTA are passed", () => {
+        expect(isValidDNA("CGTA")).toBe(true);
+    });
+
 });
 
 // describe("createMatrix", () => {
