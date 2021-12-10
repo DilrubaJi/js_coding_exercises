@@ -151,8 +151,16 @@ describe("isItPrime", () => {
 describe("createMatrix", () => {
     it("returns a matrix of 1 * 1 when passed 1", () => {
         const result = createMatrix(1, "foo");
-        const expected = ["foo"];
+        const expected = [["foo"]];
         expect(result).toEqual(expected);
+    });
+
+    it("returns a matrix of 2 * 2 when passed 2", () => {
+        expect(createMatrix(2, "foo")).toEqual(
+            [
+                ["foo", "foo"], 
+                ["foo", "foo"]
+            ]);
     });
 
 });

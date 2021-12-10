@@ -60,10 +60,16 @@ const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
   const matrixArr = [];
+  const rowArr = [];
 
   for(let i = 0; i < n; i++){
-    matrixArr.push(fill);
+    rowArr.push(fill);
   }
+
+  for(let i = 0; i < n; i++){
+    matrixArr.push(rowArr);
+  }
+
   console.log(matrixArr);
   return matrixArr;
 };
