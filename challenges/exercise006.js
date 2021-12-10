@@ -87,6 +87,7 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+  console.log(staff.length);
   if (staff.length === 0) {
     return false;
   }

@@ -218,4 +218,32 @@ describe("areWeCovered", () => {
         ];
         expect(areWeCovered(staff, "Wednesday")).toBe(false);
     });
+
+    test("returns false if there are < 3 staff scheduled to work", () => {
+        const staff = [
+            {name: "gary", rota: ["Monday", "Tuesday"]},
+            {name: "paul", rota: ["Monday", "Tuesday"]},
+
+        ];
+        expect(areWeCovered(staff, "Monday")).toBe(false);
+    });
+
+    test("returns true if there are > 3 staff scheduled to work on day", () => {
+        const staff = [
+            {name: "gary", rota: ["Monday", "Tuesday"]},
+            {name: "paul", rota: ["Monday", "Tuesday"]},
+            {name: "sally", rota: ["Monday", "Tuesday"]},
+            {name: "jess", rota: ["Monday", "Tuesday"]},
+        ];
+        expect(areWeCovered(staff, "Monday")).toBe(true);
+    });
+
+    test("returns true if there are 3 staff scheduled to work on day with more days", () => {
+        const staff = [
+            {name: "gary", rota: ["Monday", "Tuesday", "Thursday", "Friday"]},
+            {name: "paul", rota: ["Monday", "Tuesday", "Thursday", "Friday"]},
+            {name: "sally", rota: ["Friday"]},
+        ];
+        expect(areWeCovered(staff, "Friday")).toBe(true);
+    });
 });
