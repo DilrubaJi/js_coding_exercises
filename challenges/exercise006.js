@@ -69,8 +69,6 @@ const createMatrix = (n, fill) => {
   for(let i = 0; i < n; i++){
     matrixArr.push(rowArr);
   }
-
-  console.log(matrixArr);
   return matrixArr;
 };
 
