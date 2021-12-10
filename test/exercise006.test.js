@@ -147,14 +147,15 @@ describe("isItPrime", () => {
 
 });
 
-// describe("createMatrix", () => {
-//     it("returns a matrix of 1 * 1 when passed 1", () => {
-//         const result = createMatrix(1, "foo");
-//         const expected = [ ["foo"] ];
-//         expect(result).toEqual(expected);
-//     });
 
-// });
+describe("createMatrix", () => {
+    it("returns a matrix of 1 * 1 when passed 1", () => {
+        const result = createMatrix(1, "foo");
+        const expected = ["foo"];
+        expect(result).toEqual(expected);
+    });
+
+});
 
 // describe("areWeCovered", () => {
 //     test("it returns false if there are no staff at all", () => {
