@@ -67,6 +67,52 @@ describe("isValidDNA", () => {
         expect(isValidDNA("ljicktKsAf")).toBe(false);
     });
 
+    it("passes CT GA, correct characters but with a space", () => {
+        expect(isValidDNA("CT GA")).toBe(false);
+    });
+
+    it("passes GCAT, correct characters", () => {
+        expect(isValidDNA("GCAT")).toBe(true);
+    });
+
+});
+
+
+describe("getComplementaryDNA", () => {
+    it("swaps the last two characters woth the fisrt two in a four character string", () => {
+        expect(() => {
+            getComplementaryDNA()
+        }).toThrow("str is required");
+    });
+
+    it("returns string < four", () => {
+        expect(() => {
+            getComplementaryDNA("CTG")}).toThrow("String is less than four characters");
+    });
+
+    it("returns string > four", () => {
+        expect(() => {
+            getComplementaryDNA("CTGAA")}).toThrow("String is more than four characters");
+    });
+
+    it("validates string is four letters, containing CGTA only", () => {
+        expect(() => {
+            getComplementaryDNA("CTxx")}).toThrow("String needs to contain characters CTGA only");
+    });
+
+    it("swaps first two characters with last two", () => {
+        expect(getComplementaryDNA("CTGA")).toBe("GACT");
+    });
+
+    it("swaps first two characters with last two", () => {
+        expect(getComplementaryDNA("TGCA")).toBe("CATG");
+    });
+
+    it("swaps lowercase first two characters with last two", () => {
+        expect(getComplementaryDNA("gcat")).toBe("ATGC");
+    });
+
+
 });
 
 // describe("createMatrix", () => {
@@ -75,7 +121,7 @@ describe("isValidDNA", () => {
 //         const expected = [ ["foo"] ];
 //         expect(result).toEqual(expected);
 //     });
-    
+
 // });
 
 // describe("areWeCovered", () => {
