@@ -27,6 +27,10 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  if (str.length < 4) throw new Error("String is less than four characters");
+  if (str.length > 4) throw new Error("String is more than four characters");
+  if (!/^[CTGA]*$/gi.test(str)) throw new Error("String needs to contain characters CTGA only");
+  return (str.charAt(2) + str.charAt(3) + str.charAt(0) + str.charAt(1)).toUpperCase();
 };
 
 /**
