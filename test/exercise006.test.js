@@ -223,7 +223,6 @@ describe("areWeCovered", () => {
         const staff = [
             {name: "gary", rota: ["Monday", "Tuesday"]},
             {name: "paul", rota: ["Monday", "Tuesday"]},
-
         ];
         expect(areWeCovered(staff, "Monday")).toBe(false);
     });
