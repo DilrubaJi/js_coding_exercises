@@ -87,17 +87,20 @@ describe("getComplementaryDNA", () => {
 
     it("returns string < four", () => {
         expect(() => {
-            getComplementaryDNA("CTG")}).toThrow("String is less than four characters");
+            getComplementaryDNA("CTG")
+        }).toThrow("String is less than four characters");
     });
 
     it("returns string > four", () => {
         expect(() => {
-            getComplementaryDNA("CTGAA")}).toThrow("String is more than four characters");
+            getComplementaryDNA("CTGAA")
+        }).toThrow("String is more than four characters");
     });
 
     it("validates string is four letters, containing CGTA only", () => {
         expect(() => {
-            getComplementaryDNA("CTxx")}).toThrow("String needs to contain characters CTGA only");
+            getComplementaryDNA("CTxx")
+        }).toThrow("String needs to contain characters CTGA only");
     });
 
     it("swaps first two characters with last two", () => {
@@ -112,6 +115,23 @@ describe("getComplementaryDNA", () => {
         expect(getComplementaryDNA("gcat")).toBe("ATGC");
     });
 
+});
+
+
+describe("isItPrime", () => {
+    it("throws error n is required when no number is given", () => {
+        expect(() => {
+            isItPrime()
+        }).toThrow("n is required");
+    });
+
+    it("gives non-prime number", () => {
+        expect(isItPrime(4)).toBe(false);
+    });
+
+    it("gives prime number", () => {
+        expect(isItPrime(7)).toBe(true);
+    });
 
 });
 
