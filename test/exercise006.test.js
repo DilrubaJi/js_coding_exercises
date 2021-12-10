@@ -129,8 +129,20 @@ describe("isItPrime", () => {
         expect(isItPrime(4)).toBe(false);
     });
 
+    it("gives non-prime number", () => {
+        expect(isItPrime(10)).toBe(false);
+    });
+
     it("gives prime number", () => {
         expect(isItPrime(7)).toBe(true);
+    });
+
+    it("gives prime number", () => {
+        expect(isItPrime(5)).toBe(true);
+    });
+
+    it("gives prime number", () => {
+        expect(isItPrime(89)).toBe(true);
     });
 
 });
