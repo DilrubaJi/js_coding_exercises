@@ -149,6 +149,19 @@ describe("isItPrime", () => {
 
 
 describe("createMatrix", () => {
+
+    it("throws error n is required, when no number is provided", () => {
+        expect(() => {
+            createMatrix()}).toThrow("n is required");
+    });
+
+    it("throws error fill is required, when no string is provided", () => {
+        expect(() => {
+            createMatrix(2)}).toThrow("fill is required");
+    });
+
+
+
     it("returns a matrix of 1 * 1 when passed 1", () => {
         const result = createMatrix(1, "foo");
         const expected = [["foo"]];
@@ -160,6 +173,26 @@ describe("createMatrix", () => {
             [
                 ["foo", "foo"], 
                 ["foo", "foo"]
+            ]);
+    });
+
+    it("returns a matrix of 3 * 3 when passed 3", () => {
+        expect(createMatrix(3, "foo")).toEqual(
+            [
+                ["foo", "foo", "foo"], 
+                ["foo", "foo", "foo"],
+                ["foo", "foo", "foo"]
+            ]);
+    });
+
+    it("returns a matrix of 5 * 5 when passed 5", () => {
+        expect(createMatrix(5, "foo")).toEqual(
+            [
+                ["foo", "foo", "foo", "foo", "foo"], 
+                ["foo", "foo", "foo", "foo", "foo"],
+                ["foo", "foo", "foo", "foo", "foo"], 
+                ["foo", "foo", "foo", "foo", "foo"],
+                ["foo", "foo", "foo", "foo", "foo"]
             ]);
     });
 
